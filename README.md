@@ -13,3 +13,6 @@ Since most of the columns are categorical (State, Coverage, Education, Employmen
 
 #### Identify Significant Numerical Variables
 Remaining columns with continuous numerical values include Income, Monthly Premium Auto, Months Since Last Claim, Months Since Policy Inception, Number of Open Complaints, Number of Open Policies, and Total Claim Amount. Because Number of Open Complaints and Number of Open Policies are not continuous variables, we will treat them as categorical. The same process as above will be done to observe which variables have a strong correlation to CLV. To identify relationships between the other predictors with Customer Lifetime Value, we create scatterplots of the data to observe an visual relationship. Variables with small p-values from the ANOVA test and an relationship CLV will be added to the model.
+
+#### Identify Possible Time Dependence
+One variable 'Effective to Date' might be heavily correlated with Customer Lifetime Value. Since it is related to time, this could be evidence of time dependence that could skew the results. In order to identify this possible model assumption violation, we will conduct a runs test. A p-value less than 0.05 shows that there is evidence of time dependence in the data. If this is present, then we will need to consider transformations to the response variable to eliminate this dependence.
