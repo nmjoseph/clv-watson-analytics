@@ -16,3 +16,11 @@ Remaining columns with continuous numerical values include Income, Monthly Premi
 
 #### Identify Possible Time Dependence
 One variable 'Effective to Date' might be heavily correlated with Customer Lifetime Value. Since it is related to time, this could be evidence of time dependence that could skew the results. In order to identify this possible model assumption violation, we will conduct a runs test. A p-value less than 0.05 shows that there is evidence of time dependence in the data. If this is present, then we will need to consider transformations to the response variable to eliminate this dependence.
+
+#### Models
+* Multiple Linear Regression
+* Multiple Linear Regression with Log Transformation of CLV
+* Polynomial Model of Degree 2 with Log Transformation of CLV
+
+#### Checking for Overfitting/Underfitting
+We use compare the training and testing set scores (MSE and MAPE) to check whether the model fits the training set perfectly or not at all. Then we use cross validation with ten subsets of the data in order to observe whether some sets are fitted well to the data and some are not. If the scores are around the same for each subset, then there are no signs of over or under-fitting.
